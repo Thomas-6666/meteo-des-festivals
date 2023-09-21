@@ -1,0 +1,7 @@
+<div class="recherche">
+  <form class="barrerecherche" #RechercheForm="ngForm" (ngSubmit)="submitForm(RechercheForm.value)">
+    <input type="search" name="search" [(ngModel)]="formData.search">
+    <button class="btn btn-primaire" type="submit">Rechercher</button>
+  </form>
+</div>
+<div class="map" id="map"></div>
