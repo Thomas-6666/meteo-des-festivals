@@ -11,6 +11,9 @@ https://fonts.google.com/specimen/Lato
 
 https://transport.data.gouv.fr/api/
 
+WeatherBit
+http://api.weatherbit.io/v2.0/current?lang=fr&key=
+74dde4db1fc848889a73b521b5827904
 
 Spotify
 5f708dcd0a7b461a8aea2232ca8d7f3c
