@@ -16,6 +16,18 @@ h1 {
 	text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
 }
 
+
+@media (max-width: 425px) {
+  h1 {
+    font-size: 16px;
+  }
+
+  .barrerecherche{
+    align-items: center;
+    flex-direction: column;
+  }
+}
+
 a {
 	text-decoration: none;
 }
@@ -57,6 +69,11 @@ input:hover, input:focus{
 .cursormap:hover {
 	font-size: 24px;
 	cursor: pointer;
+}
+
+.img-meteo{
+  width: 20%;
+  height: auto;
 }
 
 /*COULEURS*/
@@ -106,7 +123,7 @@ input:hover, input:focus{
 
 .btn-secondaire {
 	background-color: #6b9ac4;
-	color: #4059ad;
+	color: #f5f9e9;
 }
 
 .icone-primaire {
@@ -114,6 +131,11 @@ input:hover, input:focus{
 }
 
 /*GROUPES*/
+.container{
+  margin: 0 10%;
+  background-color: white;
+}
+
 .nav {
 	display: flex;
 	justify-content: space-between;
@@ -122,7 +144,7 @@ input:hover, input:focus{
 
 .map {
 	width: 100%;
-	height: 100vh;
+	height: 94vh;
 	margin: 0;
 	top: 0;
 	position: relative;
@@ -149,13 +171,19 @@ input:hover, input:focus{
 .popup {
 	text-align: center;
 	padding: 5% 8% 1%;
+  font-size: 14px;
 	border-radius: 10px;
+}
+
+.btn-popup{
+  margin-top: 3%;
+  font-size: 16px;
 }
 
 .saisie-invalide {
 	background-color: rgb(255, 50, 50);
 	color: white;
-	font-weight: medium;
+	font-weight: inherit;
 	animation: tremblement 0.5s infinite;
 }
 

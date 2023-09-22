@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { catchError, throwError } from 'rxjs';
+import { DatePipe } from '@angular/common';
 
 @Injectable({
 	providedIn: 'root'
@@ -20,7 +21,7 @@ export class PostService {
 				console.error('Erreur lors de l\'appel à l\'API de Mapbox :', error);
 				return throwError(error);
 			})
-		);;
+		);
 	}
 
 	getFestival() {
@@ -34,7 +35,12 @@ export class PostService {
 	}
 
 	getMeteo(coords: any){
-		const url = 'http://api.weatherbit.io/v2.0/current?key=' + this.weatherbittoken + '&lang=fr&lon=' + coords[0] + '&lat=' + coords[1];
+	  const startdate = new Date();
+	  const enddate = new Date();
+	  enddate.setDate(startdate.getDate() + 7);
+		const url = 'http://api.weatherbit.io/v2.0/history/daily?key=' + this.weatherbittoken + '&lon='
+      + coords.lng + '&lat=' + coords.lat + "&start_date=" + startdate.toISOString().split('T')[0]
+      + "&end_date=" + enddate.toISOString().split('T')[0];
 		return this.httpClient.get(url).pipe(
 			catchError(error => {
 				console.error('Erreur lors de l\'appel à l\'API de la météo :', error);
